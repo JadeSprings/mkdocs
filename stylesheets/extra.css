@@ -1,0 +1,72 @@
+/* ===== 强制解决列表换行问题 ===== */
+.md-typeset ul,
+.md-typeset ol {
+  padding-left: 1.5em !important;
+}
+
+.md-typeset li {
+  display: list-item !important;
+  margin-bottom: 0.5em !important;
+  line-height: 1.6 !important;
+}
+
+/* ===== 强制将 +/- 显示为圆点 ===== */
+.md-typeset ul {
+  list-style-type: disc !important;
+}
+
+.md-typeset ul li::marker {
+  content: "•" !important; /* 显式指定圆点符号 */
+  color: var(--md-default-fg-color) !important;
+  font-size: 1em !important;
+}
+
+/* ===== 修复 Material 主题的嵌套列表缩进 ===== */
+.md-typeset ul ul,
+.md-typeset ul ol,
+.md-typeset ol ul,
+.md-typeset ol ol {
+  margin-left: 1em !important;
+}
+
+/* ===== 全局列表缩进修正 ===== */
+.md-typeset ul,
+.md-typeset ol {
+  padding-left: 1em !important; /* 缩进从1.5em减小到1em */
+  margin-left: 0 !important;    /* 移除额外外边距 */
+}
+
+/* 嵌套列表缩进控制 */
+.md-typeset ul ul,
+.md-typeset ol ol,
+.md-typeset ul ol,
+.md-typeset ol ul {
+  padding-left: 0.8em !important; /* 子列表更小缩进 */
+}
+
+/* 修复Material主题的嵌套列表符号对齐 */
+.md-typeset li {
+  margin-left: 0.2em !important;
+  padding-left: 0.4em !important;
+}
+/* 消除列表与上文间距 */
+.md-typeset p + ul,
+.md-typeset p + ol {
+  margin-top: -0.8em !important;
+}
+/* 强制列表紧贴上文 */
+.md-typeset div:not([class]) > ul,
+.md-typeset div:not([class]) > ol {
+  margin-top: 0 !important;
+  padding-left: 1em !important;
+}
+
+/* 修复 +/- 符号显示 */
+.md-typeset ul:not([class]) {
+  list-style-type: disc !important;
+}
+
+/* 确保列表项间距正常 */
+.md-typeset li {
+  margin-bottom: 0.25em !important;
+}
