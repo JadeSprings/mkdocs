@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../C%2B%2B%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/">
+        <link rel="prev" href="../%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/">
       
       
-        <link rel="next" href="../Code%20Style/">
+        <link rel="next" href="../IDE%20Skills/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>IDE Skills - JadeSprings' Notes</title>
+        <title>C++编译过程 - JadeSprings' Notes</title>
       
     
     
@@ -63,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#and" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -95,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              IDE Skills
+              C++编译过程
             
           </span>
         </div>
@@ -363,29 +368,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../C%2B%2B%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    C++编译过程
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -396,7 +378,163 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    C++编译过程
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    C++编译过程
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#and" class="md-nav__link">
+    <span class="md-ellipsis">
+      编译型语言 and 解释型语言
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="编译型语言 and 解释型语言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      编译型语言
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      解释型语言
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      C++编译全过程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C++编译全过程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preprocessing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preprocessing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compilation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assemble" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assemble
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linking
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lib-and-dll" class="md-nav__link">
+    <span class="md-ellipsis">
+      .lib and .dll
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IDE%20Skills/" class="md-nav__link">
         
   
   
@@ -407,7 +545,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -484,6 +621,116 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#and" class="md-nav__link">
+    <span class="md-ellipsis">
+      编译型语言 and 解释型语言
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="编译型语言 and 解释型语言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      编译型语言
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      解释型语言
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      C++编译全过程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C++编译全过程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preprocessing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preprocessing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compilation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assemble" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assemble
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linking
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lib-and-dll" class="md-nav__link">
+    <span class="md-ellipsis">
+      .lib and .dll
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -498,9 +745,29 @@
 
 
 
-  <h1>IDE Skills</h1>
+  <h1>C++编译过程</h1>
 
-
+<h2 id="and"><em>编译型语言 and 解释型语言</em><a class="headerlink" href="#and" title="Permanent link">&para;</a></h2>
+<p>我们在编写程序时一般使用的是高级语言。然而，执行程序的计算机无法直接理解高级语言，高级语言需要通过转换，变成计算机能够理解的机器码，然后程序才能被执行。</p>
+<p>高级语言转换为机器码的方式有<code>编译</code>和<code>解释</code>两种。因此，高级编程语言也分为<code>编译型语言</code>和<code>解释型语言</code>。</p>
+<h3 id="_1"><em>编译型语言</em><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>编译型语言使用<strong>专门的编译器</strong>，针对<strong>特定的平台</strong>，将高级语言源代码编译成可被对应平台执行的机器码，并包装成该平台所能识别的可执行程序的格式。用编译型语言写的程序在执行前需要经过一个专门的编译过程，将源码编译成对应平台能识别的机器语言文件（例如Windows平台的.exe可执行文件）；编译完成以后，执行程序将不再需要编译过程，因此编译型语言程序执行效率高。</p>
+<p>C、C++、C#、Go、Rust等属于编译型语言。</p>
+<h3 id="_2"><em>解释型语言</em><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>用解释型语言编写的程序在每次执行前，需要由<strong>专门的解释器</strong>将源码逐行解释成<strong>特定平台的机器码</strong>并直接执行，不需要事先编译。由于解释型语言程序在每次执行时都要由解释器逐行解释源码并执行，因此执行效率较低。但是，解释型语言也有方便源码移植的优点，因为只要平台提供了解释器就可以运行源代码。</p>
+<p>Python、JavaScript、PHP等属于解释型语言。</p>
+<h2 id="c"><em>C++编译全过程</em><a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
+<p>下面主要针对C++，介绍一下编译的全过程。C++的编译过程包含四个步骤：预处理（Preprocessing）、编译（Compilation）、汇编（Assemble）、链接（Linking）。</p>
+<h3 id="preprocessing"><em>Preprocessing</em><a class="headerlink" href="#preprocessing" title="Permanent link">&para;</a></h3>
+<h3 id="compilation"><em>Compilation</em><a class="headerlink" href="#compilation" title="Permanent link">&para;</a></h3>
+<h3 id="assemble"><em>Assemble</em><a class="headerlink" href="#assemble" title="Permanent link">&para;</a></h3>
+<h3 id="linking"><em>Linking</em><a class="headerlink" href="#linking" title="Permanent link">&para;</a></h3>
+<h2 id="lib-and-dll"><em>.lib and .dll</em><a class="headerlink" href="#lib-and-dll" title="Permanent link">&para;</a></h2>
+<h2 id="references"><em>References</em><a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="https://blog.csdn.net/u012184539/article/details/81348780#:~:text=%E7%BC%96%E8%AF%91%E5%9E%8B%E8%AF%AD%E8%A8%80%201%20%E4%B8%80%E6%AC%A1%E6%80%A7%E7%9A%84%E7%BC%96%E8%AF%91%E6%88%90%E5%B9%B3%E5%8F%B0%E7%9B%B8%E5%85%B3%E7%9A%84%E6%9C%BA%E5%99%A8%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%EF%BC%8C%E8%BF%90%E8%A1%8C%E6%97%B6%E8%84%B1%E7%A6%BB%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%EF%BC%8C%E8%BF%90%E8%A1%8C%E6%95%88%E7%8E%87%E9%AB%98%EF%BC%9B,2%20%E4%B8%8E%E7%89%B9%E5%AE%9A%E5%B9%B3%E5%8F%B0%E7%9B%B8%E5%85%B3%EF%BC%8C%E4%B8%80%E8%88%AC%E6%97%A0%E6%B3%95%E7%A7%BB%E6%A4%8D%E5%88%B0%E5%85%B6%E4%BB%96%E5%B9%B3%E5%8F%B0%EF%BC%9B%203%20%E7%8E%B0%E6%9C%89%E7%9A%84C%E3%80%81C%2B%2B%E3%80%81Objective%E7%AD%89%E9%83%BD%E5%B1%9E%E4%BA%8E%E7%BC%96%E8%AF%91%E5%9E%8B%E8%AF%AD%E8%A8%80%E3%80%82">什么是编译型语言和解释型语言_计算机语言解释和编译的区别-CSDN博客</a></li>
+<li><a href="https://blog.csdn.net/qq_40765537/article/details/105940800">C/C++：编译全过程——预处理、编译、汇编、链接（包含预处理指令：宏定义，文件包括、条件编译）_预编译、语法检查、词法检查、依赖处理、文件合并、文件压缩、单元测试、版本管理-CSDN博客</a></li>
+</ol>
 
 
 
