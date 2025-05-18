@@ -493,19 +493,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Linking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      静态链接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      动态链接
+    </span>
+  </a>
+  
 </li>
         
       </ul>
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#lib-and-dll" class="md-nav__link">
-    <span class="md-ellipsis">
-      .lib and .dll
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -704,19 +719,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Linking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      静态链接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      动态链接
+    </span>
+  </a>
+  
 </li>
         
       </ul>
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#lib-and-dll" class="md-nav__link">
-    <span class="md-ellipsis">
-      .lib and .dll
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -759,14 +789,42 @@
 <h2 id="c"><em>C++编译全过程</em><a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
 <p>下面主要针对C++，介绍一下编译的全过程。C++的编译过程包含四个步骤：预处理（Preprocessing）、编译（Compilation）、汇编（Assemble）、链接（Linking）。</p>
 <h3 id="preprocessing"><em>Preprocessing</em><a class="headerlink" href="#preprocessing" title="Permanent link">&para;</a></h3>
+<p>预处理过程也叫预编译，主要处理如：文件包括（include）、宏定义（#define、预定义宏）、条件编译（#ifdef）等预处理指令并删除注释。</p>
+<p><strong>文件包括</strong>就是将所有的#include头文件替换成真正的内容。</p>
+<p><strong>宏定义</strong>预处理时则把所有宏定义<strong>替换</strong>成真正的内容。因此，与const常量相比，编译器并不会对宏进行类型安全检查，可能产生意想不到的错误（边际效应）。C++中存在一些预定义宏可以方便使用：<br />
+<div class="highlight"><pre><span></span><code><span class="n">__func__</span><span class="w">            </span><span class="c1">// 获取当前函数名</span>
+<span class="n">__LINE__</span><span class="w">            </span><span class="c1">// 获取当前代码行号</span>
+<span class="n">__FILE__</span><span class="w">            </span><span class="c1">// 获取当前文件名</span>
+<span class="n">__DATE__</span><span class="w">            </span><span class="c1">// 获取编译日期（格式为：&quot;MMM DD YYYY&quot;,例如&quot;May 16 2025&quot;）</span>
+<span class="n">__TIME__</span><span class="w">            </span><span class="c1">// 获取编译时间（格式为：&quot;HH:MM:SS&quot;）</span>
+<span class="n">__cplusplus</span><span class="w">         </span><span class="c1">// 获取C++语言标准版本</span>
+</code></pre></div></p>
+<p>预处理阶段，<strong>条件编译</strong>决定哪些代码段需要编译，哪些代码段不需要编译，为后续编译工作做铺垫。</p>
 <h3 id="compilation"><em>Compilation</em><a class="headerlink" href="#compilation" title="Permanent link">&para;</a></h3>
+<p>编译阶段主要进行：语法和语义分析（检查错误）、优化代码（如常量折叠、内联函数），并将代码转化为<strong>目标平台的汇编代码文件</strong>。</p>
 <h3 id="assemble"><em>Assemble</em><a class="headerlink" href="#assemble" title="Permanent link">&para;</a></h3>
+<p>汇编阶段通过不同平台的汇编器，将汇编指令文件转换为二进制机器码文件（.obj文件）。</p>
+<p>在汇编阶段，汇编器会为每个源文件生成对应的<strong>符号表</strong>。符号表记录了源文件中所使用的符号（如变量、函数等）的作用域、存储位置、作用范围（局部的还是全局的）等信息。为什么要记录符号的存储位置呢？因为符号的引用（如变量的调用、函数的调用）实际上都是根据符号的地址完成的。在汇编阶段，汇编器为符号分配的地址是临时的，即根据目标文件各个段（.text代码段、.data数据段、.bss段等）的起始地址为各个符号生成地址的偏移量；此时目标文件各个段的起始地址也是虚拟地址。</p>
+<p>由于此时为各个源文件生成的目标文件是相互独立的，但源文件可能使用了其他文件提供的变量或者函数，那么这些符号对当前的源文件来说就是未定义的。为了解决未定义符号的地址问题，汇编器还会生成一张<strong>重定位表</strong>。重定位表中记录了目标文件在链接阶段需要分配地址的符号。</p>
 <h3 id="linking"><em>Linking</em><a class="headerlink" href="#linking" title="Permanent link">&para;</a></h3>
-<h2 id="lib-and-dll"><em>.lib and .dll</em><a class="headerlink" href="#lib-and-dll" title="Permanent link">&para;</a></h2>
+<p>在链接阶段，链接器将所有的目标文件整合起来，生成可执行文件。</p>
+<p>首先，链接器会按顺序将各个目标文件按段合并起来，然后根据各个目标文件中符号相对于段的偏移量为各个符号重新分配地址，生成新的<strong>符号表</strong>。当然，此时分配的地址偏移量仍然是针对虚拟地址的，因为物理地址在运行程序前根本是无法确定的。</p>
+<p>此外，合并后的文件也不可避免地会引用一些外部符号（比如第三方库），链接器会为这些未定义的符号重新生成一张<strong>重定位表</strong>。当链接器链接完所有显式的目标文件后，会去库中寻找这些符号的定义。根据这些符号所提供的供引用的方式的不同，这部分文件的链接可以分为静态链接和动态链接。</p>
+<h4 id="_3">静态链接<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>静态链接链接静态库，在Windows中是.lib文件。静态链接会将.lib库中的变量、函数等内含进可执行文件中，优点是：使用方便、节省内存、安全性好，缺点是：可执行文件的体积大、多个可执行文件使用同一个库文件的时候无法复用、无法动态更新（更新需要重新编译文件）。</p>
+<h4 id="_4">动态链接<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>动态链接链接动态库，在Windows中是.dll文件。当链接器检查到符号是定义在.dll文件中时，链接器不会将该符号的定义保存到可执行文件中，而是将该符号所使用的库名保存到可执行文件中，在程序运行时，操作系统将从特定的目录去搜索.dll文件并链接，以保证程序的正常运行。与静态链接相比，动态链接更加节省内存、可扩展性更好。</p>
+<p>虽然静态库和动态库的扩展名分别为.lib文件和.dll文件，但是<strong>一般来说，静态链接和动态链接这两个过程都需要使用.lib文件</strong>！静态链接中使用的是.lib库文件，动态链接中使用的是.lib导入库，它们的区别是：.lib库文件中包含了符号的定义，也就是说是有代码的；而.lib导入库里是符号在.dll文件中的地址，因此还需要.dll来查询符号的具体定义。</p>
+<blockquote>
+<p>注意：.lib文件和.dll文件有Debug和Release模式，Debug模式下会保留调试信息，方便调试，而Release模式下会进行一些优化，性能更好。在实际生产环境中，应当使用Release模式下的库文件。</p>
+</blockquote>
 <h2 id="references"><em>References</em><a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
 <li><a href="https://blog.csdn.net/u012184539/article/details/81348780#:~:text=%E7%BC%96%E8%AF%91%E5%9E%8B%E8%AF%AD%E8%A8%80%201%20%E4%B8%80%E6%AC%A1%E6%80%A7%E7%9A%84%E7%BC%96%E8%AF%91%E6%88%90%E5%B9%B3%E5%8F%B0%E7%9B%B8%E5%85%B3%E7%9A%84%E6%9C%BA%E5%99%A8%E8%AF%AD%E8%A8%80%E6%96%87%E4%BB%B6%EF%BC%8C%E8%BF%90%E8%A1%8C%E6%97%B6%E8%84%B1%E7%A6%BB%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%EF%BC%8C%E8%BF%90%E8%A1%8C%E6%95%88%E7%8E%87%E9%AB%98%EF%BC%9B,2%20%E4%B8%8E%E7%89%B9%E5%AE%9A%E5%B9%B3%E5%8F%B0%E7%9B%B8%E5%85%B3%EF%BC%8C%E4%B8%80%E8%88%AC%E6%97%A0%E6%B3%95%E7%A7%BB%E6%A4%8D%E5%88%B0%E5%85%B6%E4%BB%96%E5%B9%B3%E5%8F%B0%EF%BC%9B%203%20%E7%8E%B0%E6%9C%89%E7%9A%84C%E3%80%81C%2B%2B%E3%80%81Objective%E7%AD%89%E9%83%BD%E5%B1%9E%E4%BA%8E%E7%BC%96%E8%AF%91%E5%9E%8B%E8%AF%AD%E8%A8%80%E3%80%82">什么是编译型语言和解释型语言_计算机语言解释和编译的区别-CSDN博客</a></li>
 <li><a href="https://blog.csdn.net/qq_40765537/article/details/105940800">C/C++：编译全过程——预处理、编译、汇编、链接（包含预处理指令：宏定义，文件包括、条件编译）_预编译、语法检查、词法检查、依赖处理、文件合并、文件压缩、单元测试、版本管理-CSDN博客</a></li>
+<li><a href="https://blog.csdn.net/weixin_43744293/article/details/117283686">为什么动态链接.dll和.lib都需要(详解静、动态链接库)_windows的动态链接库为什么多个lib文件-CSDN博客</a></li>
+<li><a href="https://blog.csdn.net/zxmyoung/article/details/119643260">lib库知识全面讲解（.lib、.dll）-CSDN博客</a></li>
+<li><a href="https://www.cnblogs.com/TenosDoIt/p/3203137.html">lib 和 dll 的区别、生成以及使用详解 - tenos - 博客园</a></li>
 </ol>
 
 
