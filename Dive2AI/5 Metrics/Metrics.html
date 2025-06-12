@@ -320,7 +320,7 @@
   
   
   <span class="md-ellipsis">
-    C++ Dev
+    AI4Pathology
     
   </span>
   
@@ -330,6 +330,74 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            AI4Pathology
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI4Pathology/Review.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    review
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    C++ Dev
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             C++ Dev
           </label>
@@ -474,8 +542,125 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      符号规定
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accuracy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recall-sensitivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recall / Sensitivity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precisionrecall" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precision和Recall的联系
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Precision和Recall的联系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f1-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      F1 Score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pr-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      PR Curve
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auc" class="md-nav__link">
+    <span class="md-ellipsis">
+      AUC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ROC
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -491,20 +676,21 @@
 
 
 
+  <h1>Metrics</h1>
+
 <p>Author：<font color='red'><b>@李衍博</b></font></p>
-<h1 id="_1">符号规定<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_1"><em>符号规定</em><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>TP：模型正确预测为正类的样本（真实标签是正类，模型也预测为正类）<br />
 FP：模型错误预测为正类的样本（真实标签是负类，但模型预测为正类）【误诊】<br />
 FN：模型错误预测为负类的样本（真实标签为正类，但模型预测为负类）【漏诊】<br />
 TN：模型正确预测为负类的样本（真实标签是负类，模型也预测为负类）</p>
-<h1 id="classification">Classification<a class="headerlink" href="#classification" title="Permanent link">&para;</a></h1>
-<h2 id="binary-classification">Binary Classification<a class="headerlink" href="#binary-classification" title="Permanent link">&para;</a></h2>
-<h3 id="accuracy">Accuracy<a class="headerlink" href="#accuracy" title="Permanent link">&para;</a></h3>
+<h2 id="classification"><em>Classification</em><a class="headerlink" href="#classification" title="Permanent link">&para;</a></h2>
+<h3 id="accuracy"><em>Accuracy</em><a class="headerlink" href="#accuracy" title="Permanent link">&para;</a></h3>
 <p>模型正确预测类别的样本占总样本数的比例<br />
 $$<br />
 Accuracy = \frac{TP + TN}{TP + TN + FP + FN}<br />
 $$</p>
-<h3 id="precision">Precision<a class="headerlink" href="#precision" title="Permanent link">&para;</a></h3>
+<h3 id="precision"><em>Precision</em><a class="headerlink" href="#precision" title="Permanent link">&para;</a></h3>
 <p>模型正确预测为正类的样本占模型预测为正类的样本的比例<br />
 $$<br />
 Precision = \frac{TP}{TP + FP}<br />
@@ -513,7 +699,7 @@ $$</p>
 <p><em>E.g.<br />
 精度可以类比成考试中你做了的所有题目中，做对的题目所占的比例。TP是做了且做对了的题目，TP + FP是所有做了的题目</em></p>
 </blockquote>
-<h3 id="recall-sensitivity">Recall / Sensitivity<a class="headerlink" href="#recall-sensitivity" title="Permanent link">&para;</a></h3>
+<h3 id="recall-sensitivity"><em>Recall / Sensitivity</em><a class="headerlink" href="#recall-sensitivity" title="Permanent link">&para;</a></h3>
 <p>模型正确预测为正类的样本占真实标签为正类的样本的比例<br />
 $$<br />
 Recall = \frac{TP}{TP + FN}<br />
@@ -522,7 +708,7 @@ $$</p>
 <p><em>E.g.<br />
 召回率可以类比成考试中你需要做对的题目中（例如目的是满分），你实际做对了的题目所占的比例</em></p>
 </blockquote>
-<h3 id="precisionrecall">Precision和Recall的联系<a class="headerlink" href="#precisionrecall" title="Permanent link">&para;</a></h3>
+<h3 id="precisionrecall"><em>Precision和Recall的联系</em><a class="headerlink" href="#precisionrecall" title="Permanent link">&para;</a></h3>
 <p>Precision和Recall是与TP、FP、FN相关的变量，不难看出Precision和Recall是特别关注于正类的评价指标（无论是真实标签为正类还是模型预测为正类）</p>
 <p><code>Precision</code>代表了模型对正类的<code>“查准率”</code><br />
 <code>Recall</code>代表了模型对正类的<code>“查全率”</code></p>
@@ -534,7 +720,7 @@ $$</p>
 <p><em>分类模型的预测结果通常是一种得分（例如概率或logits），通过与一个阈值（threshold）比较来决定最终预测类别。对一个模型的精度和召回率的调整可以通过改变阈值来实现（或改变其他决定最终预测类别的策略）。当提高阈值时，模型变得更”严格“，只在得分高时才预测为正类，从而精度提高，但也可能因此漏掉一些正类导致召回率降低。召回率同理</em></p>
 <p><em>对精度和召回率通常此消彼长的更一般的解释视角是：得分分布。模型对所有真实标签为正类和负类的得分输出会分别形成正类得分分布和负类得分分布（概率密度分布）。当这两条分布曲线有重叠部分时，精度和召回率就存在此消彼长的关系。可以将阈值理解为一条垂直的分界线，当阈值增大时（向右移），有一部分正类会进入分界线左边，同时会有更少的负类进入分界线右边，从而导致精度增加，召回率降低。反之亦然。如果正类得分分布和负类得分分布是绝对可分的，那么精度和召回率就不存在这种此消彼长的关系</em></p>
 </blockquote>
-<h4 id="f1-score">F1 Score<a class="headerlink" href="#f1-score" title="Permanent link">&para;</a></h4>
+<h4 id="f1-score"><em>F1 Score</em><a class="headerlink" href="#f1-score" title="Permanent link">&para;</a></h4>
 <p>F1 Score是精度和召回率的调和平均数<br />
 $$<br />
 F1 \ Score = 2 · \frac{Precision·Recall}{Precision + Recall}<br />
@@ -548,20 +734,19 @@ $$<br />
 <em>调和平均数是对较小的数值更敏感，若某个值接近0，调和平均数会显著降低。调和平均数强调数据的平衡性，若数据不平衡，调和平均数会偏向较小的值</em></p>
 <p><em>F1 Score之所以选择调和平均数来作为精度和召回率的权衡，主要是因为调和平均数会“惩罚”不平衡的数据，这种惩罚作用确保了F1分数只有在精度和召回率都较高时才高</em></p>
 </blockquote>
-<h4 id="pr-curve">PR Curve<a class="headerlink" href="#pr-curve" title="Permanent link">&para;</a></h4>
+<p>F1分数有Micro-F1、Macro-F1、Weighted-F1<br />
+这三者的区别和使用场景可以详见：<a href="https://www.zhihu.com/question/332571344">(4 封私信 / 80 条消息) macro-F1和micro-F1得分分别适用于什么场景？ - 知乎</a></p>
+<h4 id="pr-curve"><em>PR Curve</em><a class="headerlink" href="#pr-curve" title="Permanent link">&para;</a></h4>
 <p>PR曲线是精度和召回率之间的关系图，通过改变分类模型的预测阈值，计算每个阈值下的的Precision和Recall然后绘制而成。横轴是Recall，纵轴是Precision</p>
 <p>PR曲线用于可视化精度和召回率之间的权衡，帮助选择特定任务的最佳阈值</p>
-<h3 id="auc">AUC<a class="headerlink" href="#auc" title="Permanent link">&para;</a></h3>
+<h3 id="auc"><em>AUC</em><a class="headerlink" href="#auc" title="Permanent link">&para;</a></h3>
 <p>Area of Curve，某条曲线下的面积。具体含义取决于曲线的类型，最常见的两种AUC是：ROC-AUC和PR-AUC</p>
-<h2 id="multi-class-classification">Multi-Class Classification<a class="headerlink" href="#multi-class-classification" title="Permanent link">&para;</a></h2>
-<h2 id="multi-label-classification">Multi-Label Classification<a class="headerlink" href="#multi-label-classification" title="Permanent link">&para;</a></h2>
-<h1 id="regression">Regression<a class="headerlink" href="#regression" title="Permanent link">&para;</a></h1>
-<h1 id="object-detection">Object Detection<a class="headerlink" href="#object-detection" title="Permanent link">&para;</a></h1>
-<h1 id="image-segmentation">Image Segmentation<a class="headerlink" href="#image-segmentation" title="Permanent link">&para;</a></h1>
-<h1 id="natural-language-processnlp">Natural Language Process(NLP)<a class="headerlink" href="#natural-language-processnlp" title="Permanent link">&para;</a></h1>
-<h1 id="generative-tasks">Generative Tasks<a class="headerlink" href="#generative-tasks" title="Permanent link">&para;</a></h1>
-<h1 id="recommendation-systems">Recommendation Systems<a class="headerlink" href="#recommendation-systems" title="Permanent link">&para;</a></h1>
-<h1 id="time-series-forecasting">Time Series Forecasting<a class="headerlink" href="#time-series-forecasting" title="Permanent link">&para;</a></h1>
+<h3 id="roc"><em>ROC</em><a class="headerlink" href="#roc" title="Permanent link">&para;</a></h3>
+<h2 id="references"><em>References</em><a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="https://www.zhihu.com/question/332571344">(4 封私信 / 80 条消息) macro-F1和micro-F1得分分别适用于什么场景？ - 知乎</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/514732098">模型评价指标：串起来看TP、FP、FN、TN，micro-f1、macro-f1，ROC、AUC - 知乎</a></li>
+</ol>
 
 
 
