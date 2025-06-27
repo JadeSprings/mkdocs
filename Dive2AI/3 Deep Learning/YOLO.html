@@ -791,15 +791,10 @@ YOLOv8 由 Ultralytics 公司在 YOLOv5 （也是Ultralytics公司开发的）�
 <h4 id="layer-batchnorm2d">Layer: BatchNorm2d<a class="headerlink" href="#layer-batchnorm2d" title="Permanent link">&para;</a></h4>
 <p>BatchNorm2d standardizes the features in each small batch of data, <code>making the mean of each dimensional feature in the small batch close to 0 and variance close to 1</code>, ensuring that the data passing through the network is not too large or too small, which is benificial for <code>improving training stability and convergence speed</code>. </p>
 <h4 id="activation-silu">Activation: SiLU<a class="headerlink" href="#activation-silu" title="Permanent link">&para;</a></h4>
-<p>SiLU(Sigmoid Linear Unit), a speciallity of <code>Swish</code>, when <span class="arithmatex"><span class="MathJax_Preview">\beta=1</span><script type="math/tex">\beta=1</script></span>.</p>
-<div class="arithmatex">
-<div class="MathJax_Preview">
+<p>SiLU(Sigmoid Linear Unit), a speciallity of <code>Swish</code>, when <span class="arithmatex">\(\beta=1\)</span>.</p>
+<div class="arithmatex">\[
 SiLU(x) = s·\sigma(x) = \frac{x}{1+e^{-x}}
-</div>
-<script type="math/tex; mode=display">
-SiLU(x) = s·\sigma(x) = \frac{x}{1+e^{-x}}
-</script>
-</div>
+\]</div>
 <h3 id="block-bottleneck">Block: Bottleneck<a class="headerlink" href="#block-bottleneck" title="Permanent link">&para;</a></h3>
 <p>In deep neural network, especially in ResNet, Bottleneck is a commonly used module design. Bottleneck Block aims to <code>reduce the number of parameters and computation complexity while preserving the performance of the model</code>.</p>
 <p>![[Pasted image 20250421101755.png]]<br />
@@ -887,6 +882,8 @@ SiLU(x) = s·\sigma(x) = \frac{x}{1+e^{-x}}
     
     
       <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
     
   </body>
