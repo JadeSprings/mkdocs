@@ -538,6 +538,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#attention-challenging-mil-eccv-2024-by-zhang-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attention-Challenging MIL, ECCV, 2024, By Zhang etc.
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -906,6 +915,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#attention-challenging-mil-eccv-2024-by-zhang-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attention-Challenging MIL, ECCV, 2024, By Zhang etc.
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1144,7 +1162,6 @@ There are two major benefits of this concatenation method: 1) The first part of 
 <strong><em>4 Limitations</em></strong></p>
 <ul>
 <li>designing self-supervised learning strategies that adapt to the characteristics of histopathological data</li>
-<li>mechanisms that model the spatial relations can be integrated to capture macroscale features in WSI that are spatially structured and could potentially lead to further improvement</li>
 </ul>
 <h3 id="transmil-neurips-2021-by-shao-etc"><em>TransMIL<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, NeurIPS, 2021, By Shao etc.</em><a class="headerlink" href="#transmil-neurips-2021-by-shao-etc" title="Permanent link">&para;</a></h3>
 <p><strong><em>1 Contributions</em></strong></p>
@@ -1170,11 +1187,11 @@ $$<br />
 where <span class="arithmatex">\(\tilde{Q}\)</span> and <span class="arithmatex">\(\tilde{K}\)</span> are the <span class="arithmatex">\(m\)</span> landmarks selected from the original <span class="arithmatex">\(n\)</span> dimensional sequence of <span class="arithmatex">\(Q\)</span> and <span class="arithmatex">\(K\)</span>, and <span class="arithmatex">\(A^+\)</span> is the Moore-Penrose pseudoinverse of A. By doing this, the TPT module with approximation processing can satisfy the case where a bag contains thousands of tokens as input.</p>
 <p><strong><em>3 Experiments</em></strong><br />
 <strong><em>3.1 Setup</em></strong><br />
-<code>Data</code>: WSI, cropped into </p>
+<code>Data</code>: WSI, cropped into 256×256 non-overlapping patches </p>
 <p><code>Backbone</code>: Resnet50 trained on ImageNet<br />
-<code>Neck</code>:<br />
-<code>Head</code>:</p>
-<p><code>Loss</code>:</p>
+<code>Neck</code>: TPT module<br />
+<code>Head</code>: MLP</p>
+<p><code>Loss</code>: CE loss</p>
 <p><strong><em>3.2 Results</em></strong><br />
 Accuracy and AUC reaches SOTA on CAMELYON16, TCGA-NSCLC and TCGA-RCC dataset<br />
 <img src="img/TransMIL_res.png" /></p>
@@ -1183,6 +1200,24 @@ Accuracy and AUC reaches SOTA on CAMELYON16, TCGA-NSCLC and TCGA-RCC dataset<br 
 <li>pretained model is ResNet trained by ImageNet. Perhaps we can try using specialized foundation model in the field of pathology.</li>
 <li>Is there any approximation form of Transformer (or other way to compute correlation) to reduce memory and computational complexity at the same time?</li>
 </ul>
+<h3 id="attention-challenging-mil-eccv-2024-by-zhang-etc"><em>Attention-Challenging MIL<sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup>, ECCV, 2024, By Zhang etc.</em><a class="headerlink" href="#attention-challenging-mil-eccv-2024-by-zhang-etc" title="Permanent link">&para;</a></h3>
+<p>Alleviating overfitting is a research hotspot in deep learning. Overfitting is a significant chanllage in utilizing MIL methods for WSI classification. Common WSI datasets exhibit intrinsic characteristics of limited data scale, ultra-high resolutions, and staining bias, which makes overfitting more likely. </p>
+<p>Multiple existing works alongside this paper pointed out the excessive concentration of attention values in current MIL methods. Specifically, MIL’s attention mechanisms often concentrate on a subset of discriminative instances (i.e., instances relevant to the bag label) while disregarding the remaining ones.The following figure depicts a negative correlation between loss and entropy of attention values, illustrating that over-concentration of attention values could compromise model's generalization ability.<br />
+<img src="img/ACMIL_1.png" style="display: block; margin: 0 auto;"/><br />
+Some stduies in the field of natural image classification have demonstrated that <code>models solely relying on a portion of discriminative features could be susceptible to overfitting</code>. Transitioning to WSI classification, fixating on a subset of discriminative instances similarly impedes the model's generalization ability. </p>
+<p><code>The main work of this paper is to alleviate the over-concentration of attention mechanism</code>.</p>
+<p><strong><em>1 Contributions</em></strong></p>
+<ul>
+<li>present two analyses for attention value concentration using UMAP and Top-K value statistic</li>
+<li>introduce Attention-Challenging MIL (ACMIL) which combines the two novel analyses </li>
+</ul>
+<p><strong><em>2 Methods</em></strong><br />
+<strong><em>2.1 Multiple Branch Attention</em></strong></p>
+<p><strong><em>2.2 Stochastic Top-K Instance Masking</em></strong></p>
+<p><strong><em>3 Experiments</em></strong><br />
+<strong><em>3.1 Setup</em></strong></p>
+<p><strong><em>3.2 Results</em></strong></p>
+<p><strong><em>4 Limitations</em></strong></p>
 <h2 id="github-repo"><em>Github Repo</em><a class="headerlink" href="#github-repo" title="Permanent link">&para;</a></h2>
 <ol>
 <li><a href="https://github.com/lingxitong/MIL_BASELINE/tree/main">lingxitong/MIL_BASELINE: A library that integrates different MIL methods into a unified framework</a></li>
@@ -1212,6 +1247,9 @@ Accuracy and AUC reaches SOTA on CAMELYON16, TCGA-NSCLC and TCGA-RCC dataset<br 
 </li>
 <li id="fn:7">
 <p>Xiong Y, Zeng Z, Chakraborty R, et al. Nyströmformer: A nyström-based algorithm for approximating self-attention[C]//Proceedings of the AAAI conference on artificial intelligence. 2021, 35(16): 14138-14148.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p>Zhang Y, Li H, Sun Y, et al. Attention-challenging multiple instance learning for whole slide image classification[C]//European Conference on Computer Vision. Cham: Springer Nature Switzerland, 2024: 125-143.&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
