@@ -1069,8 +1069,7 @@ $$<br />
 where <span class="arithmatex">\(w \in \mathbb{R}^{L×1}\)</span>, <span class="arithmatex">\(V \in \mathbb{R}^{L×M}\)</span>, <span class="arithmatex">\(U \in \mathbb{R}^{L×M}\)</span>, <span class="arithmatex">\(h_k \in \mathbb{R}^{1×M}\)</span> is the embedding of the instance <span class="arithmatex">\(x_k\)</span>.<br />
 <img src="img/AB_MIL.png"/></p>
 <blockquote>
-<p>The use of <span class="arithmatex">\(tanh\)</span> can “include both negative and positive values for proper gradient flow”. I guess the aim of reserving negative and positive values may be to make the available feature space larger.</p>
-<p>It's true that <span class="arithmatex">\(tanh\)</span> function is almost linear for <span class="arithmatex">\(x \in [-1,1]\)</span>. But I don't completely agree with Ilse's solution in the paper. <span class="arithmatex">\(Sigmoid\)</span> function is also linear for specific range. Althought parameters <span class="arithmatex">\(U\)</span> and <span class="arithmatex">\(V\)</span> are different, we can't guarantee <span class="arithmatex">\(sigmoid\)</span> can correct the linearity of <span class="arithmatex">\(tanh\)</span> all the time. In some experiments, gated attention may fail due to this reason. I think a better approach is to find a non-linear function for <span class="arithmatex">\(x \in [-1,1]\)</span> with the same transformation <span class="arithmatex">\(U\)</span>.</p>
+<p>The use of <span class="arithmatex">\(tanh\)</span> can <strong>“include both negative and positive values for proper gradient flow”</strong>. I guess another aim of reserving negative and positive values may be to make the available feature space larger.</p>
 </blockquote>
 <p><strong><em>3 Experiments</em></strong></p>
 <p><strong><em>3.1 Setup</em></strong><br />
@@ -1084,6 +1083,7 @@ where <span class="arithmatex">\(w \in \mathbb{R}^{L×1}\)</span>, <span class="
 <p><strong><em>4 Limitations</em></strong></p>
 <ul>
 <li>Ilse assumes the MIL pooling operator is permutation-invariant, so it can't fully utilize the spatial information during aggregation. We can consider how to incorporate spatial information into the aggregation process.</li>
+<li>the aggregrator is too simple!</li>
 </ul>
 <h3 id="clam-nature-biomedical-engineering-2021-by-lu-etc"><em>CLAM<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>, Nature Biomedical Engineering, 2021, By Lu etc.</em><a class="headerlink" href="#clam-nature-biomedical-engineering-2021-by-lu-etc" title="Permanent link">&para;</a></h3>
 <p><strong><em>1 Contributions</em></strong></p>

@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#onnxruntime" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -508,6 +513,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Error Handling
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="Error%20Handling.html" class="md-nav__link md-nav__link--active">
         
   
@@ -519,6 +537,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#onnxruntime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Onnxruntime
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Onnxruntime">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ortgetapinullprt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ort::GetApi(...)返回nullprt
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -550,6 +609,38 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#onnxruntime" class="md-nav__link">
+    <span class="md-ellipsis">
+      Onnxruntime
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Onnxruntime">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ortgetapinullprt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ort::GetApi(...)返回nullprt
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -567,6 +658,11 @@
   <h1>Error Handling</h1>
 
 <p>本文记录了本人在C++程序开发过程中遇到的一些报错和解决方案，用以备忘。</p>
+<h2 id="onnxruntime">Onnxruntime<a class="headerlink" href="#onnxruntime" title="Permanent link">&para;</a></h2>
+<h3 id="ortgetapinullprt">Ort::GetApi(...)返回nullprt<a class="headerlink" href="#ortgetapinullprt" title="Permanent link">&para;</a></h3>
+<p><img src="img/error1.png" /><br />
+这个问题一般是.dll文件冲突导致的，是WIN10或WIN11特有的问题。原因在于：WIN10或WIN11的system32下自带一个onnxruntime.dll，优先级高于环境变量添加的路径。用户可以通过修改权限或直接将onnxruntime.dll拷贝到.exe文件下。</p>
+<p><em>Reference:</em> <a href="https://blog.csdn.net/weixin_46460816/article/details/134264853#:~:text=%E8%BF%99%E4%B8%AA%E4%B8%80%E8%88%AC%E4%BC%9A%E6%98%AFdll%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%EF%BC%8Cwin%E7%B3%BB%E7%BB%9F%E7%89%B9%E6%9C%89%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%8C%E5%8E%9F%E5%9B%A0%E5%9C%A8%E4%BA%8Ewin10%E7%9A%84system32%E4%B8%8B%E9%9D%A2%E8%87%AA%E5%B8%A6%E6%9C%89%E4%B8%80%E4%B8%AA,onnxruntime%20%E7%9A%84dll%EF%BC%8C%E4%BC%98%E5%85%88%E7%BA%A7%E6%AF%94%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E6%B7%BB%E5%8A%A0%E7%9A%84%E8%B7%AF%E5%BE%84%E9%AB%98%E5%AF%BC%E8%87%B4%E7%9A%84%EF%BC%8C%E4%BD%A0%E5%8F%AF%E4%BB%A5%E4%BF%AE%E6%94%B9%E6%9D%83%E9%99%90%E5%88%A0%E9%99%A4%EF%BC%8C%E6%88%96%E8%80%85%E4%BD%A0%E5%8F%AF%E4%BB%A5%E5%B0%86onnx%E7%9A%84%E7%9B%B8%E5%85%B3dll%E6%8B%B7%E8%B4%9D%E5%88%B0%E4%BD%A0%E9%A1%B9%E7%9B%AE%E7%9A%84exe%E4%B8%8B%E9%9D%A2%E5%8E%BB%E8%BF%90%E8%A1%8C%E7%9C%8B%E4%B8%8B%E3%80%82">报错信息如下：引发了异常: 读取访问权限冲突。Ort::GetApi(...) 返回 nullptr。_引发了异常: 读取访问权限冲突。 <strong>ort::getapi</strong>(...) 返回 nullptr。-CSDN博客</a></p>
 
 
 
