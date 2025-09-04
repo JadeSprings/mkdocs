@@ -9,20 +9,22 @@
       
       
       
-        <link rel="prev" href="Code%20Style.html">
+        <link rel="prev" href="../1%20Data%20Preprocessing/Normalization.html">
       
       
+        <link rel="next" href="../3%20Deep%20Learning/Batch%20Normalization.html">
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
     
     
       
-        <title>Error Handling - JadeSprings' Notes</title>
+        <title>2 Machine Learning - JadeSprings' Notes</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
       
       
 
@@ -41,9 +43,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -61,11 +63,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#onnxruntime" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -78,7 +75,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../index.html" title="JadeSprings&#39; Notes" class="md-header__button md-logo" aria-label="JadeSprings' Notes" data-md-component="logo">
+    <a href="../../index.html" title="JadeSprings&#39; Notes" class="md-header__button md-logo" aria-label="JadeSprings' Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -98,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Error Handling
+              2 Machine Learning
             
           </span>
         </div>
@@ -176,7 +173,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="JadeSprings&#39; Notes" class="md-nav__button md-logo" aria-label="JadeSprings' Notes" data-md-component="logo">
+    <a href="../../index.html" title="JadeSprings&#39; Notes" class="md-nav__button md-logo" aria-label="JadeSprings' Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -194,7 +191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   
@@ -216,7 +213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about%20me.html" class="md-nav__link">
+      <a href="../../about%20me.html" class="md-nav__link">
         
   
   
@@ -235,18 +232,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -262,7 +261,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Dive2AI
@@ -276,7 +275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Dive2AI/0%20Methodology/Methodology.html" class="md-nav__link">
+      <a href="../0%20Methodology/Methodology.html" class="md-nav__link">
         
   
   
@@ -299,7 +298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Dive2AI/1%20Data%20Preprocessing/Normalization.html" class="md-nav__link">
+      <a href="../1%20Data%20Preprocessing/Normalization.html" class="md-nav__link">
         
   
   
@@ -319,10 +318,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Dive2AI/2%20Machine%20Learning/SVM.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="SVM.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -333,6 +339,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -345,7 +352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Dive2AI/3%20Deep%20Learning/Batch%20Normalization.html" class="md-nav__link">
+      <a href="../3%20Deep%20Learning/Batch%20Normalization.html" class="md-nav__link">
         
   
   
@@ -368,7 +375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Dive2AI/4%20Optimization/Optimizer.html" class="md-nav__link">
+      <a href="../4%20Optimization/Optimizer.html" class="md-nav__link">
         
   
   
@@ -391,7 +398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Dive2AI/5%20Metrics/Metrics.html" class="md-nav__link">
+      <a href="../5%20Metrics/Metrics.html" class="md-nav__link">
         
   
   
@@ -414,7 +421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Dive2AI/6%20Inference/Onnx%20Runtime.html" class="md-nav__link">
+      <a href="../6%20Inference/Onnx%20Runtime.html" class="md-nav__link">
         
   
   
@@ -482,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../AI4Pathology/Review.html" class="md-nav__link">
+      <a href="../../AI4Pathology/Review.html" class="md-nav__link">
         
   
   
@@ -509,20 +516,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -538,7 +543,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             C++ Dev
@@ -552,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.html" class="md-nav__link">
+      <a href="../../C%2B%2B/%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.html" class="md-nav__link">
         
   
   
@@ -575,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="C%2B%2B%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B.html" class="md-nav__link">
+      <a href="../../C%2B%2B/C%2B%2B%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B.html" class="md-nav__link">
         
   
   
@@ -598,7 +603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="IDE%20Skills.html" class="md-nav__link">
+      <a href="../../C%2B%2B/IDE%20Skills.html" class="md-nav__link">
         
   
   
@@ -621,7 +626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Code%20Style.html" class="md-nav__link">
+      <a href="../../C%2B%2B/Code%20Style.html" class="md-nav__link">
         
   
   
@@ -641,30 +646,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Error Handling
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="Error%20Handling.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../C%2B%2B/Error%20Handling.html" class="md-nav__link">
         
   
   
@@ -675,48 +660,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#onnxruntime" class="md-nav__link">
-    <span class="md-ellipsis">
-      Onnxruntime
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Onnxruntime">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ortgetapinullprt" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ort::GetApi(...)返回nullprt
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -747,38 +690,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#onnxruntime" class="md-nav__link">
-    <span class="md-ellipsis">
-      Onnxruntime
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Onnxruntime">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ortgetapinullprt" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ort::GetApi(...)返回nullprt
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -793,14 +704,9 @@
 
 
 
-  <h1>Error Handling</h1>
+  <h1>2 Machine Learning</h1>
 
-<p>本文记录了本人在C++程序开发过程中遇到的一些报错和解决方案，用以备忘。</p>
-<h2 id="onnxruntime">Onnxruntime<a class="headerlink" href="#onnxruntime" title="Permanent link">&para;</a></h2>
-<h3 id="ortgetapinullprt">Ort::GetApi(...)返回nullprt<a class="headerlink" href="#ortgetapinullprt" title="Permanent link">&para;</a></h3>
-<p><img src="img/error1.png" /><br />
-这个问题一般是.dll文件冲突导致的，是WIN10或WIN11特有的问题。原因在于：WIN10或WIN11的system32下自带一个onnxruntime.dll，优先级高于环境变量添加的路径。用户可以通过修改权限或直接将onnxruntime.dll拷贝到.exe文件下。</p>
-<p><em>Reference:</em> <a href="https://blog.csdn.net/weixin_46460816/article/details/134264853#:~:text=%E8%BF%99%E4%B8%AA%E4%B8%80%E8%88%AC%E4%BC%9A%E6%98%AFdll%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98%E5%AF%BC%E8%87%B4%E7%9A%84%EF%BC%8Cwin%E7%B3%BB%E7%BB%9F%E7%89%B9%E6%9C%89%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%8C%E5%8E%9F%E5%9B%A0%E5%9C%A8%E4%BA%8Ewin10%E7%9A%84system32%E4%B8%8B%E9%9D%A2%E8%87%AA%E5%B8%A6%E6%9C%89%E4%B8%80%E4%B8%AA,onnxruntime%20%E7%9A%84dll%EF%BC%8C%E4%BC%98%E5%85%88%E7%BA%A7%E6%AF%94%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E6%B7%BB%E5%8A%A0%E7%9A%84%E8%B7%AF%E5%BE%84%E9%AB%98%E5%AF%BC%E8%87%B4%E7%9A%84%EF%BC%8C%E4%BD%A0%E5%8F%AF%E4%BB%A5%E4%BF%AE%E6%94%B9%E6%9D%83%E9%99%90%E5%88%A0%E9%99%A4%EF%BC%8C%E6%88%96%E8%80%85%E4%BD%A0%E5%8F%AF%E4%BB%A5%E5%B0%86onnx%E7%9A%84%E7%9B%B8%E5%85%B3dll%E6%8B%B7%E8%B4%9D%E5%88%B0%E4%BD%A0%E9%A1%B9%E7%9B%AE%E7%9A%84exe%E4%B8%8B%E9%9D%A2%E5%8E%BB%E8%BF%90%E8%A1%8C%E7%9C%8B%E4%B8%8B%E3%80%82">报错信息如下：引发了异常: 读取访问权限冲突。Ort::GetApi(...) 返回 nullptr。_引发了异常: 读取访问权限冲突。 <strong>ort::getapi</strong>(...) 返回 nullptr。-CSDN博客</a></p>
+
 
 
 
@@ -849,10 +755,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
