@@ -16,7 +16,7 @@
     
     
       
-        <title>Regularization - JadeSprings' Notes</title>
+        <title>Linear Regression - JadeSprings' Notes</title>
       
     
     
@@ -59,6 +59,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#problem-formulation" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -91,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Regularization
+              Linear Regression
             
           </span>
         </div>
@@ -561,6 +566,56 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem Formulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-estimation-from-point-estimation-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameter Estimation: From Point Estimation View
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameter Estimation: From Point Estimation View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maximum-likelyhood-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maximum Likelyhood Estimation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maximum-a-postior-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maximum A Postior Estimation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -575,12 +630,12 @@
 
 
 
-  <h1>Regularization</h1>
+  <h1>Linear Regression</h1>
 
-<p>过拟合通常是因为模型的复杂度太高，可以通过降低模型的深度和宽度、正则化等手段降低过拟合的程度</p>
-<p>即使降低了模型的复杂度，数据也有导致过拟合的隐患，具体来说：<br />
-+ 数据量不足。如果训练数据太少，模型可能无法泛化，即使模型简单也会记住数据中的噪声，导致过拟合。此时需要收集更多的数据或者数据增强<br />
-+ 数据噪声太多。如果数据中存在大量噪声或错误标签，简单的模型可能会被这些噪声干扰，导致在训练集上表现好但泛化差。此时需要数据清洗或去噪处理</p>
+<h2 id="problem-formulation"><em>Problem Formulation</em><a class="headerlink" href="#problem-formulation" title="Permanent link">&para;</a></h2>
+<h2 id="parameter-estimation-from-point-estimation-view"><em>Parameter Estimation: From Point Estimation View</em><a class="headerlink" href="#parameter-estimation-from-point-estimation-view" title="Permanent link">&para;</a></h2>
+<h3 id="maximum-likelyhood-estimation"><em>Maximum Likelyhood Estimation</em><a class="headerlink" href="#maximum-likelyhood-estimation" title="Permanent link">&para;</a></h3>
+<h3 id="maximum-a-postior-estimation"><em>Maximum A Postior Estimation</em><a class="headerlink" href="#maximum-a-postior-estimation" title="Permanent link">&para;</a></h3>
 
 
 
